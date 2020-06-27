@@ -33,13 +33,15 @@ namespace CADesktopUI.Helpers
             return result + errors;
         }
 
+        
+
 
         /// <summary>
         /// Need to implement 'tensorflow, pickle, keras'
         /// Current version of IronPython won't support this external libreries
         /// pythonnet in .NET Core will
         /// </summary>
-      
+
         public string PatchParameter(string parameter, int serviceid, string PathToPythonScript)
         {
             var engine = Python.CreateEngine(); // Extract Python language engine from their grasp
