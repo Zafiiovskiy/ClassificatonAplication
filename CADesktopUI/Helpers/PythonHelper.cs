@@ -15,7 +15,7 @@ namespace CADesktopUI.Helpers
         public string RunFile(string pathToPythonCode)
         {
             ProcessStartInfo start = new ProcessStartInfo();
-            start.FileName = @"C:\Users\Andrian\PycharmProjects\FlaskCrashCourse\venv\Scripts\python.exe"; // need a path to compiler on lockal machine
+            start.FileName = @"C:\Users\Andrian\Anaconda3\envs\tensor\python.exe"; // need a path to compiler on lockal machine
             var sctipt = pathToPythonCode;
             start.Arguments = String.Format("\"{0}\"", pathToPythonCode);
             start.UseShellExecute = false;

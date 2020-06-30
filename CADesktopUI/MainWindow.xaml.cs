@@ -24,7 +24,7 @@ namespace CADesktopUI
                 PythonHelper pythonHelper = new PythonHelper();
 
                 textHelper.WriteToFile(@"C:\Users\Andrian\Desktop\Projects\CatsVsDogs\ClassificatonAplication\CANeuralNetwork\DataFromUI\TextData.txt", TextBoxText);
-                var result = pythonHelper.RunFile(@"C:\Users\Andrian\Desktop\Projects\CatsVsDogs\ClassificatonAplication\CANeuralNetwork\CANeuralNetwork.py");
+                var result = pythonHelper.RunFile(@"C:\Users\Andrian\Desktop\Projects\CatsVsDogs\ClassificatonAplication\CANeuralNetwork\Model.py");
                 MessageBox.Show(result);
             }
             catch(Exception ex)
