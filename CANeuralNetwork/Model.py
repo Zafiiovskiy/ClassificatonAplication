@@ -2,6 +2,8 @@ import os
 import numpy as np
 import matplotlib.pyplot as plt
 import tensorflow as tf
+#import time
+#start_time = time.time()
 
 #import tensorflow_datasets as tfds
 keras = tf.keras
@@ -24,10 +26,11 @@ pictureUri = format_image_uri(pictureUri)
 path_to_model_h5 = r"C:\Users\Andrian\Desktop\Projects\CatsVsDogs\ClassificatonAplication\CANeuralNetwork\Model\cats_vs_dogs.h5"; 
 new_model = keras.models.load_model(path_to_model_h5);
 
-import matplotlib.pyplot as plt
+
 import matplotlib.image as mpimg
 img = mpimg.imread(pictureUri)
 img = format(img)
 img = np.expand_dims(img, axis=0)
 result = new_model.predict(img)
 print(result)
+#print("Calculations in {} took {} sec".format("Application",time.time()-start_time))
