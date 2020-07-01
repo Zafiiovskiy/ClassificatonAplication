@@ -24,13 +24,13 @@ namespace CADesktopUI.Helpers
             start.RedirectStandardError = true;
 
             var result = "";
-            var errors = "";
+            //var errors = "";
             using (Process process = Process.Start(start))
             {
-                errors = process.StandardError.ReadToEnd();
+                //errors = process.StandardError.ReadToEnd();
                 result = process.StandardOutput.ReadToEnd();
             }
-            return result + errors;
+            return result;
         }
 
         

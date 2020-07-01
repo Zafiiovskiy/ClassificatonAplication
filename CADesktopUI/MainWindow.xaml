@@ -4,11 +4,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CADesktopUI"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        mc:Ignorable="d" FontSize="36"
+        Title="Classification Application" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
@@ -17,12 +19,18 @@
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="1">
-            <Button x:Name="TestButton" Content="This is a test Button"
-                    FontSize="36" Click="TestButton_Click"/>
-            <TextBox MinHeight="30" x:Name="TestTextBox"
-                     MinWidth="50" FontSize="36"/>
+
+        <Label x:Name="Result" Content="Results will be here" Grid.Row="1" Grid.Column="1"
+               HorizontalAlignment="Center" Margin="0 5"/>
+
+        <Image x:Name="PictureBox" Grid.Row="2" Grid.Column="1" 
+               Margin="0 5" MaxWidth="400" MaxHeight="400"/>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1" Margin="0 5" HorizontalAlignment="Center">
+            <Button x:Name="RunClassificationButton" Content="Evaluate" Margin="5 0" Click="RunClassificationButton_Click"/>
+            <Button x:Name="LoadPictureButton" Content="Open Picture" Margin="5 0" Click="LoadPictureButton_Click"/>
         </StackPanel>
+
 
     </Grid>
 </Window>
