@@ -37,7 +37,7 @@ namespace CADesktopUI
         //    }
         //}
 
-        private void RunClassificationButton_Click(object sender, RoutedEventArgs e)
+        private async void RunClassificationButton_Click(object sender, RoutedEventArgs e)
         {
             try
             {
@@ -47,7 +47,7 @@ namespace CADesktopUI
                 textHelper.WriteToFile(@"C:\Users\Andrian\Desktop\Projects\CatsVsDogs\ClassificatonAplication\CANeuralNetwork\DataFromUI\TextData.txt", PictureUri.ToString());
 
 
-                var result = pythonHelper.RunFile(@"C:\Users\Andrian\Desktop\Projects\CatsVsDogs\ClassificatonAplication\CANeuralNetwork\Model.py");
+                var result = await pythonHelper.RunFileAsync(@"C:\Users\Andrian\Desktop\Projects\CatsVsDogs\ClassificatonAplication\CANeuralNetwork\Model.py");
                 string resultString = textHelper.FormatResult(result);
                 Result.Content = resultString; 
             }

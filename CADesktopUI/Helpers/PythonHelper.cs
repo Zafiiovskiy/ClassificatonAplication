@@ -12,7 +12,7 @@ namespace CADesktopUI.Helpers
 {
     public class PythonHelper
     {
-        public string RunFile(string pathToPythonCode)
+        public async Task<string> RunFileAsync(string pathToPythonCode)
         {
             ProcessStartInfo start = new ProcessStartInfo();
             start.FileName = @"C:\Users\Andrian\Anaconda3\envs\tensor\python.exe"; // need a path to compiler on lockal machine
@@ -23,13 +23,15 @@ namespace CADesktopUI.Helpers
             start.RedirectStandardOutput = true;
             start.RedirectStandardError = true;
 
-            var result = "";
+            string result;
             //var errors = "";
+            
             using (Process process = Process.Start(start))
             {
                 //errors = process.StandardError.ReadToEnd();
-                result = process.StandardOutput.ReadToEnd();
+                result = await Task.Run(() => process.StandardOutput.ReadToEnd());
             }
+            
             return result;
         }
 
