@@ -1,2 +1,2 @@
-# ClassificatonAplication
-Merging Python newral network to C# WPF aplication
+# Classificaton Application
+Merging Python neural network to C# WPF application
